@@ -21,4 +21,13 @@ void main() {
       expect(manager.productCount, 0);
     });
   });
+    test('rejects product with spaces only', () {
+    final manager = ProductManager();
+    final p = Product('   ', 'blank name', 10.0);
+
+    manager.addProduct(p);
+
+    expect(manager.productCount, 0);
+  });
+
 }
