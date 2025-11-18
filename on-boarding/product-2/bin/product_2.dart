@@ -26,8 +26,15 @@ class Product {
 
 class ProductManager {
   final List<Product> _products = [];
+  int get productCount => _products.length;
+
 
   void addProduct(Product product) {
+    if (product.name.trim().isEmpty) {
+      print('\nProduct name cannot be empty.');
+      return;
+    }
+
     _products.add(product);
     print('\nProduct added.');
   }
